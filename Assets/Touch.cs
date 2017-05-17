@@ -47,4 +47,8 @@ public class Touch : MonoBehaviour {
 	public void TV (){
 		hantei = 2;
 	}
+
+	public void Trashbin (){
+		hantei = 3;
+	}
 }

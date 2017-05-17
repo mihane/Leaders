@@ -15,5 +15,8 @@ public class TimeScript : MonoBehaviour {
 	void Update () {
 		timeLimit -= Time.deltaTime;
 		time.text = "Time : " + timeLimit.ToString ("f2");
+		if (timeLimit <= 0)
+			time.text = "Automatic Operation";
+			
 	}
 }

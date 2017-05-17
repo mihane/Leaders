@@ -7,18 +7,20 @@ public class MovementControl : MonoBehaviour {
 	public float maxTorque = 50.0f;
 	private Rigidbody m_rigidbody;
 	public Transform centerOfMass;
+	public float timer = 0.0f;
+	private int i;
 
 	void start()
 	{
 		m_rigidbody = GetComponent<Rigidbody>();
 		m_rigidbody.centerOfMass = centerOfMass.localPosition;
 	}
-	
+
 	void Update()
 	{
-		UpdateMeshesPositions ();
+		timer += Time.deltaTime;
 	}
-	
+
 	void FixedUpdate()
 	{// 0 is front left and 1 is front right
 		float steer = Input.GetAxis ("Horizontal");
@@ -26,19 +28,14 @@ public class MovementControl : MonoBehaviour {
 		wheelColliders [0].steerAngle = fixedAngel;
 		wheelColliders [1].steerAngle = fixedAngel;
 
-		////
 		float acceleration = Input.GetAxis ("Vertical");
-		for (int i = 0; i < 4; i++) 
-		{
-			Invoke ("DelayMethod", 30.0f);
-			void DelayMethod (){
-				wheelColliders[i].motorTorque = 1f * maxTorque;
-			}
-		}
-
-		////
+		for (i = 0; i < 4; i++)
+		if (timer >= 30.0f)
+			wheelColliders [i].motorTorque = 1 * maxTorque;
+		if (timer >= 60.0f)
+			wheelColliders [i].motorTorque = 0 * maxTorque;
 	}
-	
+
 	void UpdateMeshesPositions()
 	{
 		for(int i = 0; i < 4 ; i++)
