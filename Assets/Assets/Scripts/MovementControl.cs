@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class MovementControl : MonoBehaviour {
-	public WheelCollider[] wheelColliders = new WheelCollider[4];
+	public WheelCollider[] wheelColliders;// = new WheelCollider[4];
 	public Transform[] tyreMeshes = new Transform[4];
 	public float maxTorque = 50.0f;
 	private Rigidbody m_rigidbody;

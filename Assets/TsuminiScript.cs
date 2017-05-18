@@ -18,6 +18,25 @@ public class TsuminiScript : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-		score += 10;
+		if(other.tag == "Box")
+			score += 10;
+		if (other.tag == "SoccerBall")
+			score += 20;
+		if (other.tag == "TV")
+			score += 30;
+		if (other.tag == "TrashBin")
+			score += 40;
+			
+	}
+
+	void OnTriggerExit(Collider other){
+		if(other.tag == "Box")
+			score -= 10;
+		if (other.tag == "SoccerBall")
+			score -= 20;
+		if (other.tag == "TV")
+			score -= 30;
+		if (other.tag == "TrashBin")
+			score -= 40;
 	}
 }

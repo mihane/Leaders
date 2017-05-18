@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Button
+  - SoccerBall
+  - Box
+  - TrashBin
+  - TV
   layers:
   - Default
   - TransparentFX

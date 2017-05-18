@@ -1450,6 +1450,7 @@ MonoBehaviour:
   - {fileID: 1378022834345422, guid: b1a19f19f820649ddb872dbe1312fca8, type: 2}
   - {fileID: 0}
   cube: {fileID: 534718338}
+  spawnPosition: {fileID: 1643482919}
   hantei: 0
 --- !u!81 &1575109777
 AudioListener:
@@ -1668,12 +1669,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1643482919}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.86, z: -0.44}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.86, z: -4.89}
   m_LocalScale: {x: 2.4577537, y: 2.1187768, z: 6.2718883}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1169808691}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1643482924
 MonoBehaviour:
@@ -1736,7 +1737,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &1711209809
 CanvasRenderer:
   m_ObjectHideFlags: 0

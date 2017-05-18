@@ -12,6 +12,8 @@ public class Touch : MonoBehaviour {
 
 	private Vector3 clickPosition;
 
+	public GameObject spawnPosition;
+
 	public int hantei;
 
 	void Update () {
@@ -30,8 +32,8 @@ public class Touch : MonoBehaviour {
 				clickPosition = Input.mousePosition;
 
 				clickPosition.z = 5f;
-
-				Instantiate (tsumini[hantei], Camera.main.ScreenToWorldPoint (clickPosition), cube.transform.rotation);
+				if (clickPosition.x <= 475) 
+					Instantiate (tsumini[hantei], Camera.main.ScreenToWorldPoint (clickPosition), tsumini[hantei].transform.rotation);
 			}
 		}
 	}
