@@ -15,8 +15,10 @@ public class TimeScript : MonoBehaviour {
 	void Update () {
 		timeLimit -= Time.deltaTime;
 		time.text = "Time : " + timeLimit.ToString ("f2");
-		if (timeLimit <= 0)
+		if (timeLimit <= 0.0)
 			time.text = "Automatic Operation";
+		if (timeLimit <= -30.0)
+			Destroy (gameObject);
 			
 	}
 }
