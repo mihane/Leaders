@@ -14,7 +14,7 @@ public class TimeScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timeLimit -= Time.deltaTime;
-		time.text = "Time : " + timeLimit.ToString ("f2");
+		time.text = "Time Limit : " + timeLimit.ToString ("f2");
 		if (timeLimit <= 0.0)
 			time.text = "Automatic Operation";
 		if (timeLimit <= -30.0)

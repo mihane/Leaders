@@ -32,7 +32,7 @@ public class Touch : MonoBehaviour {
 				clickPosition = Input.mousePosition;
 
 				clickPosition.z = 5f;
-				if (clickPosition.x <= 475) 
+				if (clickPosition.x <= 450) 
 					Instantiate (tsumini[hantei], Camera.main.ScreenToWorldPoint (clickPosition), tsumini[hantei].transform.rotation);
 			}
 		}

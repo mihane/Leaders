@@ -21,24 +21,24 @@ public class TsuminiScript : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		if(other.tag == "Box")
-			score += 100;
+			score += 1000;
 		if (other.tag == "SoccerBall")
-			score += 200;
+			score += 2000;
 		if (other.tag == "TV")
-			score += 300;
+			score += 3000;
 		if (other.tag == "TrashBin")
-			score += 400;
+			score += 4000;
 			
 	}
 
 	void OnTriggerExit(Collider other){
 		if(other.tag == "Box")
-			score -= 100;
+			score -= 1000;
 		if (other.tag == "SoccerBall")
-			score -= 200;
+			score -= 2000;
 		if (other.tag == "TV")
-			score -= 300;
+			score -= 3000;
 		if (other.tag == "TrashBin")
-			score -= 400;
+			score -= 4000;
 	}
 }
