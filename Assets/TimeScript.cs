@@ -4,11 +4,11 @@ using UnityEngine.UI;
 
 public class TimeScript : MonoBehaviour {
 	public Text time;
-	public static float timeLimit = 30.0f;
+	public float timeLimit = 30.0f;
 
 	// Use this for initialization
 	void Start () {
-
+		gameObject.SetActive (true);
 	}
 
 	// Update is called once per frame
@@ -18,7 +18,7 @@ public class TimeScript : MonoBehaviour {
 		if (timeLimit <= 0.0)
 			time.text = "Automatic Operation";
 		if (timeLimit <= -30.0)
-			Destroy (gameObject);
+			gameObject.SetActive (false);
 			
 	}
 }

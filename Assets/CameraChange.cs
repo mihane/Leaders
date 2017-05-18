@@ -8,6 +8,8 @@ public class CameraChange : MonoBehaviour {
 	public Camera subCamera;
 	public float timer = 0.0f;
 
+	public Canvas canvas;
+
 	void Start () {
 		subCamera.enabled = false;
 	}
@@ -22,6 +24,8 @@ public class CameraChange : MonoBehaviour {
 		if (timer >= 60.0f) {
 			mainCamera.enabled = true;
 			subCamera.enabled = false;
+
+			canvas.gameObject.SetActive (true);
 		}
 	
 	}
