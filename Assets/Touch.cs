@@ -30,9 +30,13 @@ public class Touch : MonoBehaviour {
 				Debug.Log(objectName);
 
 				clickPosition = Input.mousePosition;
+				Debug.Log (clickPosition);
+
 
 				clickPosition.z = 5f;
-				if (clickPosition.x <= 450) 
+				int width = Screen.width;
+
+				if (clickPosition.x <= (width / 2)) 
 					Instantiate (tsumini[hantei], Camera.main.ScreenToWorldPoint (clickPosition), tsumini[hantei].transform.rotation);
 			}
 		}
