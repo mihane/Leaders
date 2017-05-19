@@ -15,29 +15,41 @@ public class Touch : MonoBehaviour {
 	public GameObject spawnPosition;
 
 	public int hantei;
+	public float time;
+
 
 	void Update () {
+
+
+		time += Time.deltaTime;
+		Debug.Log (time);
+		if(time <= 60){
 		// 左クリックを取得
-		if (Input.GetMouseButtonDown(0)) {
-			// クリックしたスクリーン座標をrayに変換
-			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-			// Rayの当たったオブジェクトの情報を格納する
-			RaycastHit hit = new RaycastHit();
-			// オブジェクトにrayが当たった時
-			if (Physics.Raycast(ray, out hit, distance)) {
-				// rayが当たったオブジェクトの名前を取得
-				string objectName = hit.collider.gameObject.name;
-				Debug.Log(objectName);
+			if (Input.GetMouseButtonDown (0)) {
+				// クリックしたスクリーン座標をrayに変換
+				Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+				// Rayの当たったオブジェクトの情報を格納する
+				RaycastHit hit = new RaycastHit ();
+				// オブジェクトにrayが当たった時
+				if (Physics.Raycast (ray, out hit, distance)) {
+					// rayが当たったオブジェクトの名前を取得
+					string objectName = hit.collider.gameObject.name;
+					Debug.Log (objectName);
 
-				clickPosition = Input.mousePosition;
-				Debug.Log (clickPosition);
+					clickPosition = Input.mousePosition;
 
 
-				clickPosition.z = 5f;
-				int width = Screen.width;
-
+					clickPosition.z = 5f;
+					int width = Screen.width;
+					/*
 				if (clickPosition.x <= (width / 2)) 
 					Instantiate (tsumini[hantei], Camera.main.ScreenToWorldPoint (clickPosition), tsumini[hantei].transform.rotation);
+*/
+					if (clickPosition.x <= (width / 2))
+						Instantiate (tsumini [hantei], Camera.main.ScreenToWorldPoint (clickPosition), tsumini [hantei].transform.rotation);
+			
+				}
+
 			}
 		}
 	}
