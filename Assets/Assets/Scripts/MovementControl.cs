@@ -28,7 +28,6 @@ public class MovementControl : MonoBehaviour {
 		wheelColliders [0].steerAngle = fixedAngel;
 		wheelColliders [1].steerAngle = fixedAngel;
 
-		float acceleration = Input.GetAxis ("Vertical");
 
 		if (timer >= 30.0f) {
 			for (i = 0; i < 4; i++) {
